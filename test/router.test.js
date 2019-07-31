@@ -18,3 +18,14 @@ tape("Home route returns a status code of 200", t => {
       t.end();
     });
 });
+
+tape("Search returns a status code of 200 and a JSON object", t => {
+  supertest(router)
+  .get("/search?france")
+  .expect(200)
+  .expect("Content-Type", "application/json")
+  .end((err, res) => {
+    t.error(err)
+    t.end()
+  })
+})
