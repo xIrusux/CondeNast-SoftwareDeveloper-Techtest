@@ -5,4 +5,9 @@ let handleHome = (request, response) => {
   response.end("Hi");
 };
 
-module.exports = handleHome;
+let handleApi = (request, response, endpoint) => {
+  response.writeHead(200, { "Content-Type": "application/json" });
+  response.end({});
+}
+
+module.exports = { handleHome, handleApi };
