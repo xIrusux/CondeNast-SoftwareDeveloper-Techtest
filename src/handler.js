@@ -4,7 +4,11 @@ const path = require("path")
 
 let handleHome = (request, response) => {
   const filePath = path.join(__dirname, "..", "public", "index.html")
+
+  console.log('this is the file path', filePath)
+
   fs.readFile(filePath, (err, file) => {
+
     if(err){
       response.writeHead(500, {"Content-Type": "text/html"})
       reponse.end("<h1>Sorry something went wrong!</h1>")
