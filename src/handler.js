@@ -6,7 +6,6 @@ const env = require("dotenv").config();
 
 let handleHome = (request, response) => {
   const filePath = path.join(__dirname, "..", "public", "index.html");
-  console.log("this is the file path", filePath);
 
   fs.readFile(filePath, (err, file) => {
     if (err) {
@@ -53,7 +52,7 @@ let handleApi = (request, response, endpoint) => {
       response.end("<h1>Not found!</h1>");
     } else {
       response.writeHead(200, { "Content-Type": "application/json" });
-      response.write(JSON.stringify(data));
+      response.write(JSON.stringify(data.articles));
       response.end();
     }
   });
