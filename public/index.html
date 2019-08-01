@@ -13,7 +13,12 @@
         <section class="title">
             <h1>News </br> around </br> the world</h1>
         </section>
+    
+        <p class ="quickselect">
+Quickselect - most popular countries
+        </p>
         <section class = "countries-display">
+
             <button class="country-select" data-country="de">
               <div class="country-text">DE</div>
             </button>
@@ -27,6 +32,17 @@
               <div class="country-text">IE</div>
             </button>
         </section>
+
+        <section class = "countries-dropdown">
+        <label for="country" class="country-label">Select a country</label>
+        <select id="country" class="dropdown">
+                <option> Please select a country</option>
+            <option value="ua">United Arab Emirates</option>
+            <option value="ar">Argentina</option>
+            <option value="at">Austria</option>
+        </select>
+        <button class="search-button" id="searchbutton">Search</button>
+    </section>
 
         <section class = "articles-display">
 
