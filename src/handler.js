@@ -10,7 +10,7 @@ let handleHome = (request, response) => {
       reponse.end("<h1>Sorry something went wrong!</h1>")
     } else {
       response.writeHead(200, { "Content-Type": "text/html" });
-      response.end(file);  
+      response.end(file);
     }
   })
 };
@@ -27,8 +27,16 @@ let handlePublic = (request, response, endpoint) => {
     png: "image/png"
   };
 
-  response.writeHead(200, { "Content-Type": extensions[fileType] });
-  response.end();
+  const filePath = path.join(__dirname, "..", endpoint)
+  fs.readFile(filePath, (err, file) => {
+    if(err){
+      response.writeHead(500, {"Content-Type": "text/html"})
+      reponse.end("<h1>Sorry something went wrong!</h1>")
+    } else {
+      response.writeHead(200, { "Content-Type": extensions[fileType] });
+      response.end(file);
+    }
+  })
 };
 
 let handleApi = (request, response, endpoint) => {
