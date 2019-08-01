@@ -13,6 +13,7 @@ const myRequest = (url, cb) => {
         const body = JSON.parse(allData);
         const statusCode = response.statusCode;
         cb(null, { statusCode, body });
+        console.log(response);
       });
     })
     .on("error", err => cb(err));
