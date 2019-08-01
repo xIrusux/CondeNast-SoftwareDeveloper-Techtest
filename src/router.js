@@ -5,7 +5,7 @@ const router = (request, response) => {
   if (endpoint === "/") {
     handleHome(request, response);
   } else if (endpoint.includes("/search")) {
-      handleApi(request, response, endpoint)
+    handleApi(request, response, endpoint);
   }
 };
 
