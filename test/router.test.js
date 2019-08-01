@@ -40,3 +40,14 @@ tape("Search returns a status code of 200 and any file in public folder", t => {
       t.end();
     });
 });
+
+tape("Return an error if the route is wrong", t => {
+  supertest(router)
+  .get("/unicorne")
+  .expect(404)
+  .expect("Content-Type", /html/)
+  .end((err, res) => {
+    t.error(err)
+    t.end("")
+  })
+})
