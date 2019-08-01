@@ -1,6 +1,6 @@
 const fs = require("fs");
-const path = require("path")
-
+const path = require("path");
+const requestModule = require("./request");
 
 let handleHome = (request, response) => {
   const filePath = path.join(__dirname, "..", "public", "index.html")
@@ -38,7 +38,7 @@ let handlePublic = (request, response, endpoint) => {
       response.end("<h1>Not found!</h1>")
     } else {
       response.writeHead(200, { "Content-Type": extensions[fileType] });
-      response.end();
+      response.end(file);
     }
   })
 };
