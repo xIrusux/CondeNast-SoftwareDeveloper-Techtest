@@ -7,7 +7,7 @@ let handleHome = (request, response) => {
 
 let handleApi = (request, response, endpoint) => {
   response.writeHead(200, { "Content-Type": "application/json" });
-  response.end({});
-}
+  response.end("");
+};
 
 module.exports = { handleHome, handleApi };
