@@ -11,16 +11,7 @@ const myRequest = (url, cb) => {
       });
       response.on("end", () => {
         const body = JSON.parse(allData);
-<<<<<<< HEAD
-        const statusCode = response.statusCode;
-        cb(null, { statusCode, body });
-        console.log(response);
-||||||| merged common ancestors
-        const statusCode = response.statusCode;
-        cb(null, { statusCode, body });
-=======
         cb(null, body);
->>>>>>> master
       });
     })
     .on("error", err => cb(err));
