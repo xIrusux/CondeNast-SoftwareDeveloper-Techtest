@@ -1,9 +1,6 @@
-import { createBrotliCompress } from "zlib";
-
 (() => {
   console.log("function called");
   let countryElements = document.querySelectorAll(".country-select");
-  let articleElements = document.querySelectorAll(".artciles-display");
   countryElements.forEach(elem => {
     elem.addEventListener("click", () => {
       let countryCode = elem.dataset.country;
@@ -22,4 +19,22 @@ let apiCall = countryCode => {
   xhr.send();
 };
 
-var addDom = obj => {};
+let addDom = obj => {
+  let articleElements = document.querySelector(".articles-display");
+  let article = document.createElement("article");
+  let headline = document.createElement("h2");
+  let image = document.createElement("img");
+  let text = document.createElement("p");
+  let articleURL = document.createElement("a");
+
+  headline.textContent = obj.title;
+  image.src = obj.urlToImage;
+  text.textContent = obj.description;
+  articleURL.href = obj.url;
+
+  articleElements.appendChild(article);
+  article.appendChild(articleURL);
+  articleURL.appendChild(headline);
+  article.appendChild(image);
+  article.appendChild(text);
+};
