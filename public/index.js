@@ -1,6 +1,6 @@
 (() => {
-  console.log("function called");
   let countryElements = document.querySelectorAll(".country-select");
+
   countryElements.forEach(elem => {
     elem.addEventListener("click", () => {
       let countryCode = elem.dataset.country;
@@ -11,6 +11,9 @@
 let apiCall = countryCode => {
   let xhr = new XMLHttpRequest();
   xhr.onload = response => {
+    let articleElements = document.querySelector(".articles-display");
+
+    articleElements.innerHTML = "";
     const newsObject = JSON.parse(xhr.responseText);
     var topThree = newsObject.splice(0, 3);
     topThree.forEach(elem => addDom(elem));
