@@ -5,10 +5,13 @@ const router = (request, response) => {
   if (endpoint === "/") {
     handleHome(request, response);
   } else if (endpoint.indexOf("public") !== -1) {
-    console.log(endpoint.indexOf("public"));
     handlePublic(request, response, endpoint);
   } else if (endpoint.includes("/search")) {
     handleApi(request, response, endpoint);
+  }
+  else {
+    response.writeHead(404, {"Content-Type": "text/html"})
+    response.end("<h1>404 file not found</h1>")
   }
 };
 
