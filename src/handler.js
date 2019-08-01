@@ -1,22 +1,22 @@
 const fs = require("fs");
 const path = require("path");
 const requestModule = require("./request");
+// const env = require("env2")("../.env");
+const env = require("dotenv").config();
 
 let handleHome = (request, response) => {
-  const filePath = path.join(__dirname, "..", "public", "index.html")
-
-  console.log('this is the file path', filePath)
+  const filePath = path.join(__dirname, "..", "public", "index.html");
+  console.log("this is the file path", filePath);
 
   fs.readFile(filePath, (err, file) => {
-
-    if(err){
-      response.writeHead(500, {"Content-Type": "text/html"})
-      response.end("<h1>Sorry something went wrong!</h1>")
+    if (err) {
+      response.writeHead(500, { "Content-Type": "text/html" });
+      response.end("<h1>Sorry something went wrong!</h1>");
     } else {
       response.writeHead(200, { "Content-Type": "text/html" });
       response.end(file);
     }
-  })
+  });
 };
 
 let handlePublic = (request, response, endpoint) => {
@@ -31,21 +31,32 @@ let handlePublic = (request, response, endpoint) => {
     png: "image/png"
   };
 
-  const filePath = path.join(__dirname, "..", endpoint)
+  const filePath = path.join(__dirname, "..", endpoint);
   fs.readFile(filePath, (err, file) => {
-    if(err){
-      response.writeHead(404, {"Content-Type": "text/html"})
-      response.end("<h1>Not found!</h1>")
+    if (err) {
+      response.writeHead(404, { "Content-Type": "text/html" });
+      response.end("<h1>Not found!</h1>");
     } else {
       response.writeHead(200, { "Content-Type": extensions[fileType] });
       response.end(file);
     }
-  })
+  });
 };
 
 let handleApi = (request, response, endpoint) => {
-  response.writeHead(200, { "Content-Type": "application/json" });
-  response.end();
+  const newsKey = process.env.DB_APIKEYNEWS;
+  const countryCode = endpoint.split("?")[1];
+  let url = `https://newsapi.org/v2/top-headlines?country=${countryCode}&apiKey=${newsKey}`;
+  requestModule(url, (err, data) => {
+    if (err) {
+      response.writeHead(404, { "Content-Type": "text/html" });
+      response.end("<h1>Not found!</h1>");
+    } else {
+      response.writeHead(200, { "Content-Type": "application/json" });
+      response.write(JSON.stringify(data));
+      response.end();
+    }
+  });
 };
 
 module.exports = { handleHome, handlePublic, handleApi };
