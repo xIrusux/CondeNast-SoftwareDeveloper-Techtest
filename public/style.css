@@ -1,42 +1,87 @@
+html {
+  box-sizing: border-box;
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
 
 p {
-    font-family: 'Darker Grotesque', sans-serif;  
-
+  font-family: "Darker Grotesque", sans-serif;
 }
 
 /* Default size (up to 768px) */
 .title {
-    font-family: 'Suez One', serif;
-    font-size: 1rem;
-    padding-left: 8vw;
-    padding-top: 2vh;
-    width: 100%;
-    height: 25vh;
+  font-family: "Suez One", serif;
+  font-size: 1rem;
+  padding-left: 8vw;
+  padding-top: 2vh;
+  width: 100%;
+  height: 25vh;
 }
 .countries-display {
-    display: flex;
-    justify-content: space-around;
-    width: 100vw;
-    margin-top: 20px;
+  display: flex;
+  justify-content: space-around;
+  width: 100vw;
+  margin-top: 20px;
 }
-.country-select {
-    font-family: 'Darker Grotesque', sans-serif; 
-    font-size: 1.5rem;
-    text-align: left;
-    border: 4px solid black;
-    background-color: white;
-    width: 20vw;
-    height: 20vw;
 
+.countries-dropdown {
+  display: flex;
+  justify-content: center;
+  width: 100vw;
+  margin-top: 5rem;
+
+  font-family: "Darker Grotesque", sans-serif;
+  font-size: 2rem;
+  background-color: white;
+}
+
+.country-label {
+  padding-right: 1.5rem;
+}
+
+.search-button {
+  border: 4px solid black;
+  background-color: white;
+  padding: 0 1rem;
+}
+
+.search-button:hover {
+  border: 4px solid white;
+  background-color: black;
+  color: white;
+  font-weight: 700;
+}
+
+.dropdown {
+  border: 5px solid transparent;
+  border-image: linear-gradient(
+    to bottom right,
+    #b827fc 0%,
+    #2c90fc 25%,
+    #b8fd33 50%,
+    #fec837 75%,
+    #fd1892 100%
+  );
+  border-image-slice: 1;
+  background-color: white;
+}
+
+.country-select {
+  font-family: "Darker Grotesque", sans-serif;
+  font-size: 1.5rem;
+  text-align: left;
+  border: 4px solid black;
+  background-color: white;
+  width: 20vw;
+  height: 20vw;
 }
 
 .full-country-name {
-    font-size: 1rem;
+  font-size: 1rem;
 }
-
-
-
-
-
 
 /* Larger size (over 768px) */
