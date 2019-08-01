@@ -1,8 +1,22 @@
 const fs = require("fs");
+const path = require("path")
+
 
 let handleHome = (request, response) => {
-  response.writeHead(200, { "Content-Type": "text/html" });
-  response.end("Hi");
+  const filePath = path.join(__dirname, "..", "public", "index.html")
+
+  console.log('this is the file path', filePath)
+
+  fs.readFile(filePath, (err, file) => {
+
+    if(err){
+      response.writeHead(500, {"Content-Type": "text/html"})
+      response.end("<h1>Sorry something went wrong!</h1>")
+    } else {
+      response.writeHead(200, { "Content-Type": "text/html" });
+      response.end(file);
+    }
+  })
 };
 
 let handlePublic = (request, response, endpoint) => {
@@ -17,13 +31,21 @@ let handlePublic = (request, response, endpoint) => {
     png: "image/png"
   };
 
-  response.writeHead(200, { "Content-Type": extensions[fileType] });
-  response.end();
+  const filePath = path.join(__dirname, "..", endpoint)
+  fs.readFile(filePath, (err, file) => {
+    if(err){
+      response.writeHead(404, {"Content-Type": "text/html"})
+      response.end("<h1>Not found!</h1>")
+    } else {
+      response.writeHead(200, { "Content-Type": extensions[fileType] });
+      response.end();
+    }
+  })
 };
 
 let handleApi = (request, response, endpoint) => {
   response.writeHead(200, { "Content-Type": "application/json" });
-  response.end("");
+  response.end();
 };
 
 module.exports = { handleHome, handlePublic, handleApi };

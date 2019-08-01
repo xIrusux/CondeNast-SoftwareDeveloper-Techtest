@@ -30,13 +30,24 @@ tape("Search returns a status code of 200 and a JSON object", t => {
     });
 });
 
-tape("Search returns a status code of 200 and any file in public folder", t => {
+// tape("Search returns a status code of 200 and any file in public folder", t => {
+//   supertest(router)
+//     .get("/public.css")
+//     .expect(200)
+//     .expect("Content-type", /css/)
+//     .end((err, res) => {
+//       t.error(err);
+//       t.end();
+//     });
+// });
+
+tape("Return an error if the route is wrong", t => {
   supertest(router)
-    .get("/public.css")
-    .expect(200)
-    .expect("Content-type", /css/)
-    .end((err, res) => {
-      t.error(err);
-      t.end();
-    });
-});
+  .get("/unicorn")
+  .expect(404)
+  .expect("Content-Type", /html/)
+  .end((err, res) => {
+    t.error(err)
+    t.end("")
+  })
+})
