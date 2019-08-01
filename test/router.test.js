@@ -21,7 +21,7 @@ tape("Home route returns a status code of 200", t => {
 
 tape("Search returns a status code of 200 and a JSON object", t => {
   supertest(router)
-    .get("/search?france")
+    .get("/search?fr")
     .expect(200)
     .expect("Content-Type", "application/json")
     .end((err, res) => {
@@ -43,11 +43,11 @@ tape("Search returns a status code of 200 and a JSON object", t => {
 
 tape("Return an error if the route is wrong", t => {
   supertest(router)
-  .get("/unicorn")
-  .expect(404)
-  .expect("Content-Type", /html/)
-  .end((err, res) => {
-    t.error(err)
-    t.end("")
-  })
-})
+    .get("/unicorn")
+    .expect(404)
+    .expect("Content-Type", /html/)
+    .end((err, res) => {
+      t.error(err);
+      t.end("");
+    });
+});
