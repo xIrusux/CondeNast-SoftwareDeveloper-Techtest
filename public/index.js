@@ -6,7 +6,13 @@
   let search = document.querySelector("#searchbutton");
   search.addEventListener("click", () => {
     let countryCode = document.querySelector("#country").value;
-    apiCall(countryCode);
+    console.log(countryCode);
+    // let countryCode = elem.dataset.country;
+    if (countryCode !== "") {
+      apiCall(countryCode);
+    } else {
+      alert("Please select a country in the dropdown menu");
+    }
   });
 
   // This event listener is for the quick select country buttons
