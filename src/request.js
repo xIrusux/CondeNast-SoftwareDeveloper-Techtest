@@ -10,8 +10,13 @@ const myRequest = (url, cb) => {
         allData += chunk;
       });
       response.on("end", () => {
-        const body = JSON.parse(allData);
-        cb(null, {statusCode: response.statusCode, body});
+        if (response.statusCode !== 200) {
+          cb(new Error('status code:' + response.statusCode))
+        }
+        else {
+          const body = JSON.parse(allData);
+          cb(null, {statusCode: response.statusCode, body});
+        }
       });
     })
     .on("error", err => cb(err));

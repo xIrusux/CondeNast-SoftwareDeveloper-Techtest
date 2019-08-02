@@ -5,9 +5,7 @@
 
   let search = document.querySelector("#searchbutton");
   search.addEventListener("click", () => {
-    console.log("Hi");
     let countryCode = document.querySelector("#country").value;
-    console.log(countryCode);
     // let countryCode = elem.dataset.country;
     apiCall(countryCode);
   });
@@ -26,9 +24,16 @@ let apiCall = countryCode => {
   xhr.onload = response => {
     let articleElements = document.querySelector(".articles-display");
     articleElements.innerHTML = "";
-    const newsObject = JSON.parse(xhr.responseText);
-    var topThree = newsObject.splice(0, 3);
-    topThree.forEach(elem => addDom(elem));
+    if (xhr.status !== 200) {
+          let headline = document.createElement("h2");
+          headline.textContent = "No data";
+          articleElements.appendChild(headline);
+        }
+    else {
+      const newsObject = JSON.parse(xhr.responseText);
+      var topThree = newsObject.splice(0, 3);
+      topThree.forEach(elem => addDom(elem));
+    }
   };
   xhr.open("GET", `/search?${countryCode}`, true);
   xhr.send();
