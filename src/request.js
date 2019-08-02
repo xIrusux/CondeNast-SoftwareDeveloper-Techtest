@@ -11,7 +11,7 @@ const myRequest = (url, cb) => {
       });
       response.on("end", () => {
         const body = JSON.parse(allData);
-        cb(null, body);
+        cb(null, {statusCode: response.statusCode, body});
       });
     })
     .on("error", err => cb(err));
