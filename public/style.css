@@ -79,7 +79,7 @@ body {
 h2 {
   padding-top: 20px;
   font-family: "Suez One", serif;
-  font-size: 1.5rem;
+  font-size: 1.7rem;
   width: 100%;
   padding-left: 20px;
   padding-right: 20px;
@@ -91,13 +91,13 @@ a {
 }
 
 img {
-  width: 100vw;
+  width: 100%;
   padding-left: 20px;
   padding-right: 20px;
 }
 
 p {
-  font-size: 1.8rem;
+  font-size: 1.2rem;
   padding-left: 20px;
   padding-right: 20px;
 }
@@ -154,10 +154,24 @@ p {
   font-size: 1rem;
 }
 
+.articles-display {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  margin-top: 5%;
+}
+
+article {
+  background-color: rgba(245, 245, 245, 0.847) !important;
+  border: 3px solid black;
+  flex-grow: 0;
+  margin: 5% 2%;
+}
+
 /* Larger size (over 768px) */
 @media screen and (min-width: 768px) {
   h2 {
-    font-size: 2.5rem;
+    font-size: 2rem;
   }
 
   .country-label {
@@ -203,5 +217,17 @@ p {
   #searchbutton {
     margin: 0;
     padding: 0 2rem;
+  }
+  .articles-display {
+    flex-direction: row;
+    margin: 5% 5%;
+    justify-content: space-between;
+  }
+
+  article {
+    background-color: rgba(245, 245, 245, 0.847);
+    flex-grow: 1;
+    margin: 0 1%;
+    width: 33%;
   }
 }
