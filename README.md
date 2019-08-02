@@ -20,6 +20,12 @@ The project requires you to have a file .env in main directory, containing the A
 DB_APIKEYNEWS=your_own_APIkey
 ```
 
+Once you have all dependencies and the API key, you can run the server with: 
+
+```
+npm start
+```
+
 
 ## Third-party resources
 
