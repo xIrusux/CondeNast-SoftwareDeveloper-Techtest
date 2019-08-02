@@ -5,10 +5,7 @@
 
   let search = document.querySelector("#searchbutton");
   search.addEventListener("click", () => {
-    console.log("Hi");
     let countryCode = document.querySelector("#country").value;
-    console.log(countryCode);
-    // let countryCode = elem.dataset.country;
     apiCall(countryCode);
   });
 

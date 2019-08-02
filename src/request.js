@@ -1,6 +1,6 @@
 "use strict";
 
-const https = require("https"); // theoretically should be called https
+const https = require("https");
 
 const myRequest = (url, cb) => {
   http

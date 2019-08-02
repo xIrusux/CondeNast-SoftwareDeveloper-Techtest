@@ -1,7 +1,6 @@
 const fs = require("fs");
 const path = require("path");
 const requestModule = require("./request");
-// const env = require("env2")("../.env");
 const env = require("dotenv").config();
 
 let handleHome = (request, response) => {
