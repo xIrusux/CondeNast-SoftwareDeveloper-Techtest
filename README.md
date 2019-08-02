@@ -1,13 +1,13 @@
 # TOP NEWS WORLDWIDE 
 
 [![Build Status](https://www.travis-ci.org/fac-17/PFAK-week5.svg?branch=master)](https://www.travis-ci.org/fac-17/PFAK-week5)
+![Heroku](https://heroku-badge.herokuapp.com/?app=belo-wk5)
 
 ## Installation instructions 
 
 Clone the repo with: 
 ```
 git clone https://github.com/fac-17/PFAK-week5.git
-
 ```
 
 Install all dependencies with: 
