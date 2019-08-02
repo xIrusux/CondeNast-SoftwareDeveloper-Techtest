@@ -3,10 +3,29 @@
 [![Build Status](https://www.travis-ci.org/fac-17/PFAK-week5.svg?branch=master)](https://www.travis-ci.org/fac-17/PFAK-week5)
 
 ## Installation instructions 
+
+Clone the repo with: 
+```
+git clone https://github.com/fac-17/PFAK-week5.git
+
+```
+
+Install all dependencies with: 
 ```
 npm install
 ```
-The project requires you to have a file .env in main directory, containing the API key. Our team will provide you with tha content of that file on request. 
+The project requires you to have a file .env in main directory, containing the API key. Our team will provide you with tha content of that file on request. Alternativel, you can get your own API key and add a .env file to the root folder with: 
+
+```
+DB_APIKEYNEWS=your_own_APIkey
+```
+
+Once you have all dependencies and the API key, you can run the server with: 
+
+```
+npm start
+```
+
 
 ## Third-party resources
 

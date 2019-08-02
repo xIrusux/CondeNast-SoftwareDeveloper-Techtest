@@ -40,9 +40,18 @@ let addDom = obj => {
   let articleURL = document.createElement("a");
 
   headline.textContent = obj.title;
-  image.src = obj.urlToImage;
+
+  image.alt = "Image from external source";
   text.textContent = obj.description;
   articleURL.href = obj.url;
+  articleURL.target = "_blank";
+
+  if (obj.urlToImage) {
+    image.src = obj.urlToImage;
+  } else {
+    image.src =
+      "https://images.pexels.com/photos/356079/pexels-photo-356079.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260";
+  }
 
   articleElements.appendChild(article);
   article.appendChild(articleURL);

@@ -1,7 +1,11 @@
 const fs = require("fs");
 const path = require("path");
 const requestModule = require("./request");
+<<<<<<< HEAD
 const env = require("dotenv").config();
+=======
+require("dotenv").config();
+>>>>>>> fe8a97ff5f922849e4200b19f5451d1527ef333a
 
 let handleHome = (request, response) => {
   const filePath = path.join(__dirname, "..", "public", "index.html");

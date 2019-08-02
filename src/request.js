@@ -3,7 +3,7 @@
 const https = require("https");
 
 const myRequest = (url, cb) => {
-  http
+  https
     .get(url, response => {
       let allData = "";
       response.on("data", chunk => {
