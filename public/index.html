@@ -1,73 +1,72 @@
 <!DOCTYPE html>
-    <head>
-        <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <title>News around the world</title>
-        <meta name="description" content="">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="stylesheet" href="../public/style.css">
-        <link rel="stylesheet" href="../public/normalize.css">
-        <link href="https://fonts.googleapis.com/css?family=Darker+Grotesque|Suez+One&display=swap" rel="stylesheet">
-    </head>
-    <body>
-        <section class="title">
-            <h1>News </br> around </br> the world</h1>
-        </section>
-    
-        <p class ="quickselect">
-            Quickselect - most popular countries
-        </p>
-        <section class = "countries-display">
+<head>
+  <html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" >
+    <title>NAW</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="../public/style.css">
+    <link rel="stylesheet" href="../public/normalize.css">
+    <link href="https://fonts.googleapis.com/css?family=Darker+Grotesque|Suez+One&display=swap" rel="stylesheet">
+  </head>
+  <body>
+    <section class="title">
+      <h1>News </br> around </br> the world</h1>
+    </section>
 
-            <button class="country-select" data-country="de">
-              <div class="country-text">DE</div>
-            </button>
-            <button class = "country-select france" data-country="fr">
-              <div class="country-text">FR</div>
-            </button>
-            <button class = "country-select great-britain" data-country="gb">
-              <div class="country-text">UK</div>
-            </button>
-            <button class = "country-select ireland" data-country="ie">
-              <div class="country-text">IE</div>
-            </button>
-        </section>
+    <p class ="quickselect">
+      Quickselect - most popular countries
+    </p>
+    <section class = "countries-display">
+      <button class="country-select" data-country="de">
+        <div class="country-text">DE</div>
+      </button>
+      <button class = "country-select france" data-country="fr">
+        <div class="country-text">FR</div>
+      </button>
+      <button class = "country-select great-britain" data-country="gb">
+        <div class="country-text">UK</div>
+      </button>
+      <button class = "country-select ireland" data-country="ie">
+        <div class="country-text">IE</div>
+      </button>
+    </section>
+    <section class = "countries-dropdown">
+      <label for="country" class="country-label">Select a country</label>
+      <select required id="country" class="dropdown">
+        <option value="" disabled selected hidden> Select your option</option>
+        <option value="ar">Argentina</option>
+        <option value="at">Austria</option>
+        <option value="au">Australia</option>
+        <option value="be">Belgium</option>
+        <option value="br">Brazil</option>
+        <option value="ca">Canada</option>
+        <option value="ch">Switzerland</option>
+        <option value="cn">China</option>
+        <option value="co">Colombia</option>
+        <option value="cu">Cuba</option>
+        <option value="cz">Czech Republic</option>
+        <option value="at">Germany</option>
+        <option value="eg">Egypt</option>
+        <option value="fr">France</option>
+        <option value="gb">Great Britain</option>
+        <option value="at">Greece</option>
+        <option value="at">Hong Kong</option>
+        <option value="hu">Hungary</option>
+        <option value="id">Indonesia</option>
+        <option value="re">Ireland</option>
+        <option value="il">Israel</option>
+        <option value="in">India</option>
+        <option value="it">Italy</option>
+        <option value="jp">Japan</option>
+      </select>
+      <button class="search-button" id="searchbutton">Search</button>
+    </section>
+    <section class = "articles-display">
+    </section>
 
-        <section class = "countries-dropdown">
-          <label for="country" class="country-label">Select a country</label>
-          <select required id="country" class="dropdown">
-                <option value="" disabled selected hidden> Select your option</option> 
-                <option value="ar">Argentina</option>
-                <option value="at">Austria</option>
-                <option value="au">Australia</option>
-                <option value="be">Belgium</option>
-                <option value="br">Brazil</option>
-                <option value="ca">Canada</option>
-                <option value="ch">Switzerland</option>
-                <option value="cn">China</option>
-                <option value="co">Colombia</option>
-                <option value="cu">Cuba</option>
-                <option value="cz">Czech Republic</option>
-                <option value="at">Germany</option>
-                <option value="eg">Egypt</option>
-                <option value="fr">France</option>
-                <option value="gb">Great Britain</option>
-                <option value="at">Greece</option>
-                <option value="at">Hong Kong</option>
-                <option value="hu">Hungary</option>
-                <option value="id">Indonesia</option>
-                <option value="re">Ireland</option>
-                <option value="il">Israel</option>
-                <option value="in">India</option>
-                <option value="it">Italy</option>
-                <option value="jp">Japan</option>
-          </select>
-          <button class="search-button" id="searchbutton">Search</button>
-        </section>
-
-        <section class = "articles-display">
-        </section>
-
-        <script src="../public/index.js" async defer></script>
-    </body>
-</html>
+    <script src="../public/index.js" async defer></script>
+  </body>
+  </html>
