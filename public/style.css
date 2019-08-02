@@ -144,6 +144,7 @@ p {
     #fd1892 100%
   );
   border-image-slice: 1;
+  cursor: pointer;
 }
 
 .full-country-name {
