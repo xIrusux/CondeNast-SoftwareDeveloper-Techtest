@@ -28,7 +28,7 @@ let apiCall = countryCode => {
     let articleElements = document.querySelector(".articles-display");
     articleElements.innerHTML = "";
     const newsObject = JSON.parse(xhr.responseText);
-    var topThree = newsObject.splice(0, 3);
+    let topThree = newsObject.splice(0, 3);
     topThree.forEach(elem => addDom(elem));
   };
   xhr.open("GET", `/search?${countryCode}`, true);
