@@ -121,6 +121,9 @@ p {
   );
   border-image-slice: 1;
   background-color: white;
+  font-size: 1.5rem;
+  width: 95%;
+  padding: 0.5rem 0;
 }
 
 .country-select {
@@ -153,6 +156,9 @@ p {
 
 /* Larger size (over 768px) */
 @media screen and (min-width: 768px) {
+  h2 {
+    font-size: 2.5rem;
+  }
   .country-label {
     padding-right: 1.5rem;
   }
