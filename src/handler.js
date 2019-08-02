@@ -47,11 +47,13 @@ let handleApi = (request, response, endpoint) => {
   let url = `https://newsapi.org/v2/top-headlines?country=${countryCode}&apiKey=${newsKey}`;
   requestModule(url, (err, data) => {
     if (err) {
-      response.writeHead(404, { "Content-Type": "text/html" });
-      response.end("<h1>Not found!</h1>");
+      console.error(err);
+      response.writeHead(400, { "Content-Type": "text/html" });
+      response.write("no data");
+      response.end();
     } else {
       response.writeHead(200, { "Content-Type": "application/json" });
-      response.write(JSON.stringify(data.articles));
+      response.write(JSON.stringify(data.body.articles));
       response.end();
     }
   });
