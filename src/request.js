@@ -1,9 +1,9 @@
 "use strict";
 
-const http = require("https"); // theoretically should be called https
+const https = require("https");
 
 const myRequest = (url, cb) => {
-  http
+  https
     .get(url, response => {
       let allData = "";
       response.on("data", chunk => {
