@@ -192,7 +192,7 @@ p {
   .dropdown {
     font-size: 2rem;
     width: 50%;
-    padding: 0.5rem 0;
+    padding: 0.5rem;
   }
 
   .country-label {
@@ -202,5 +202,6 @@ p {
 
   #searchbutton {
     margin: 0;
+    padding: 0 2rem;
   }
 }
