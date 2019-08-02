@@ -16,7 +16,6 @@
   });
 
   // This event listener is for the quick select country buttons
-
   countryElements.forEach(elem => {
     elem.addEventListener("click", () => {
       let countryCode = elem.dataset.country;
