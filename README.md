@@ -106,12 +106,12 @@ All in mob programming/group discussion:
 
 
 ### Stretch Goals
-- [ ] Add alt text to images (> DOM manipulation)
-- [ ] Change all vars to let
+- [X] Add alt text to images (> DOM manipulation)
+- [X] Change all vars to let
 - [ ] Test pure functions
-- [ ] Modularise Code 
+- [X] Modularise Code 
 - [ ] Write Readme 
-- [ ] Add continuous integration and code coverage badges to readme
+- [X] Add continuous integration and code coverage badges to readme
 - [ ] Use CodeCov to track test coverage
 - [ ] Create an svg map to select the country 
 
