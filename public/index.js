@@ -1,28 +1,27 @@
 (() => {
-  let countryElements = document.querySelectorAll(".country-select");
+  let keywordElements = document.querySelectorAll(".keyword-select");
 
-  // This event listener is for the drop down selection option
-
-  let search = document.querySelector("#searchbutton");
-  search.addEventListener("click", () => {
-    let countryCode = document.querySelector("#country").value;
-    // let countryCode = elem.dataset.country;
-    if (countryCode !== "") {
-      apiCall(countryCode);
+  let search = document.querySelector("#query__submit");
+  search.addEventListener("click", event => {
+    event.preventDefault();
+    let keyword = document.querySelector("#queryInput").value;
+    console.log({ keyword });
+    if (keyword !== "") {
+      apiCall(keyword);
     } else {
-      alert("Please select a country in the dropdown menu");
+      alert("Please select a keyword in the dropdown menu");
     }
   });
 
-  // This event listener is for the quick select country buttons
-  countryElements.forEach(elem => {
+  // This event listener is for the quick select keyword buttons
+  keywordElements.forEach(elem => {
     elem.addEventListener("click", () => {
-      let countryCode = elem.dataset.country;
-      apiCall(countryCode);
+      let keyword = elem.dataset.keyword;
+      apiCall(keyword);
     });
   });
 })();
-let apiCall = countryCode => {
+let apiCall = keyword => {
   let xhr = new XMLHttpRequest();
   xhr.onload = response => {
     let articleElements = document.querySelector(".articles-display");
@@ -42,7 +41,7 @@ let apiCall = countryCode => {
       topThree.forEach(elem => addDom(elem));
     }
   };
-  xhr.open("GET", `/search?${countryCode}`, true);
+  xhr.open("GET", `/search?${keyword}`, true);
   xhr.send();
 };
 

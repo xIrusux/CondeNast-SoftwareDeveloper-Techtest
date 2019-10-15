@@ -28,13 +28,13 @@ body {
   width: 100%;
   height: 25vh;
 }
-.countries-display {
+.keywords-display {
   display: flex;
   justify-content: space-around;
   width: 95vw;
   margin-top: 10px;
 }
-.country-select {
+.keyword-select {
   font-family: "Darker Grotesque", sans-serif;
   font-size: 1rem;
   text-align: left;
@@ -52,7 +52,7 @@ body {
   text-align: center;
 }
 
-.countries-dropdown {
+.keywords-dropdown {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
@@ -63,16 +63,21 @@ body {
   background-color: white;
 }
 
-.country-label {
+.banner__form {
+  display: flex;
+  align-items: center;
+}
+
+.keyword-label {
   margin-bottom: 1rem;
 }
 
 .search-button {
   border: 4px solid black;
   background-color: white;
-  margin-top: 1.5rem;
+  text-align: center;
 }
-.country-text {
+.keyword-text {
   font-size: 1.3rem;
 }
 
@@ -126,7 +131,7 @@ p {
   padding: 0.5rem 0;
 }
 
-.country-select {
+.keyword-select {
   font-family: "Darker Grotesque", sans-serif;
   font-size: 1.5rem;
   text-align: left;
@@ -136,7 +141,7 @@ p {
   background-color: whitesmoke;
 }
 
-.country-select:hover {
+.keyword-select:hover {
   border: 4px solid transparent;
   border-image: linear-gradient(
     to bottom right,
@@ -150,7 +155,7 @@ p {
   cursor: pointer;
 }
 
-.full-country-name {
+.full-keyword-name {
   font-size: 1rem;
 }
 
@@ -174,7 +179,7 @@ article {
     font-size: 2rem;
   }
 
-  .country-label {
+  .keyword-label {
     padding-right: 1.5rem;
   }
 
@@ -182,7 +187,7 @@ article {
     margin-left: 1rem;
   }
 
-  .country-text {
+  .keyword-text {
     font-size: 3rem;
   }
 
@@ -191,12 +196,12 @@ article {
     margin-bottom: 3rem;
   }
 
-  .country-select {
+  .keyword-select {
     width: 10vw;
     height: 10vw;
   }
 
-  .countries-display {
+  .keywords-display {
     display: flex;
     justify-content: space-around;
     width: 50vw;
@@ -209,7 +214,7 @@ article {
     padding: 0.5rem;
   }
 
-  .country-label {
+  .keyword-label {
     margin: 0;
     padding: 0.5rem 2rem;
   }

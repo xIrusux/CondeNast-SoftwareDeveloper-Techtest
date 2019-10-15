@@ -42,9 +42,10 @@ let handlePublic = (request, response, endpoint) => {
 };
 
 let handleApi = (request, response, endpoint) => {
+  console.log("endpoint", endpoint);
   const newsKey = process.env.DB_APIKEYNEWS;
-  const countryCode = endpoint.split("?")[1];
-  let url = `https://newsapi.org/v2/top-headlines?country=${countryCode}&apiKey=${newsKey}`;
+  const keyword = endpoint.split("?")[1];
+  let url = `https://newsapi.org/v2/everything?q=${keyword}&apiKey=${newsKey}`;
   requestModule(url, (err, data) => {
     if (err) {
       console.error(err);
