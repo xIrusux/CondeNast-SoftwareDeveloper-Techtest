@@ -16,7 +16,7 @@ Install all dependencies with:
 npm install
 ```
 
-The project requires you to have a file .env in main directory, containing the API key. I am happy to provide you with tha content of that file on request. Alternativel, you can get your own API key and add a .env file to the root folder with:
+The project requires you to have a file .env in main directory, containing the API key. I am happy to provide you with the content of that file on request. Alternativel, you can get your own API key and add a .env file to the root folder with:
 
 ```
 DB_APIKEYNEWS=your_own_APIkey
@@ -34,8 +34,7 @@ News API: https://newsapi.org/
 
 ## User Journey
 
-Our user wants to find news by keyword. The app returns the top three news for the selected country.
-
+Our user wants to find news by keyword. The app returns three news based on the search.
 The user can use one of the four quick search buttons, or enter a keyword in the search field.
 
 ### Edge Case
