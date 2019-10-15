@@ -5,7 +5,6 @@
   search.addEventListener("click", () => {
     let keyword = document.querySelector("#queryInput").value;
     console.log({ keyword });
-    // let keyword = elem.dataset.country;
     if (keyword !== "") {
       apiCall(keyword);
     } else {
@@ -13,24 +12,11 @@
     }
   });
 
-  // This event listener is for the drop down selection option
-
-  // let search = document.querySelector("#searchbutton");
-  // search.addEventListener("click", () => {
-  //   let countryCode = document.querySelector("#country").value;
-  //   // let countryCode = elem.dataset.country;
-  //   if (countryCode !== "") {
-  //     apiCall(countryCode);
-  //   } else {
-  //     alert("Please select a country in the dropdown menu");
-  //   }
-  // });
-
   // This event listener is for the quick select country buttons
   countryElements.forEach(elem => {
     elem.addEventListener("click", () => {
-      let countryCode = elem.dataset.country;
-      apiCall(countryCode);
+      let keyword = elem.dataset.keyword;
+      apiCall(keyword);
     });
   });
 })();
