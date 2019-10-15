@@ -1,5 +1,5 @@
 (() => {
-  let countryElements = document.querySelectorAll(".country-select");
+  let keywordElements = document.querySelectorAll(".keyword-select");
 
   let search = document.querySelector("#query__submit");
   search.addEventListener("click", event => {
@@ -9,12 +9,12 @@
     if (keyword !== "") {
       apiCall(keyword);
     } else {
-      alert("Please select a country in the dropdown menu");
+      alert("Please select a keyword in the dropdown menu");
     }
   });
 
-  // This event listener is for the quick select country buttons
-  countryElements.forEach(elem => {
+  // This event listener is for the quick select keyword buttons
+  keywordElements.forEach(elem => {
     elem.addEventListener("click", () => {
       let keyword = elem.dataset.keyword;
       apiCall(keyword);
