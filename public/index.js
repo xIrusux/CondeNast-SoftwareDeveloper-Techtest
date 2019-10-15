@@ -2,7 +2,8 @@
   let countryElements = document.querySelectorAll(".country-select");
 
   let search = document.querySelector("#query__submit");
-  search.addEventListener("click", () => {
+  search.addEventListener("click", event => {
+    event.preventDefault();
     let keyword = document.querySelector("#queryInput").value;
     console.log({ keyword });
     if (keyword !== "") {
