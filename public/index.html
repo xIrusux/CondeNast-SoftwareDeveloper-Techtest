@@ -33,7 +33,19 @@
         <div class="country-text">IE</div>
       </button>
     </section>
-    <section class = "countries-dropdown">
+
+    <form class="query banner__form">
+      <label for="queryInput">Find news:</label>
+      <input
+        type="text"
+        class="query__input"
+        name="queryInput"
+        id="queryInput"
+      />
+      <input id="query__submit" value="GET MY NEWS!"/>
+    </form>
+
+    <!-- <section class = "countries-dropdown">
       <label for="country" class="country-label">Select a country</label>
       <select required id="country" class="dropdown">
         <option value="" disabled selected hidden> Select your option</option>
@@ -63,7 +75,7 @@
         <option value="jp">Japan</option>
       </select>
       <button class="search-button" id="searchbutton">Search</button>
-    </section>
+    </section> -->
     <section class = "articles-display">
     </section>
 
