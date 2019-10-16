@@ -19,6 +19,17 @@ tape("Home route returns a status code of 200", t => {
     });
 });
 
+tape("Return an error if the route is wrong", t => {
+  supertest(router)
+    .get("/unicorn")
+    .expect(404)
+    .expect("Content-Type", /html/)
+    .end((err, res) => {
+      t.error(err);
+      t.end("");
+    });
+});
+
 // tape("Search returns a status code of 200 and a JSON object", t => {
 //   supertest(router)
 //     .get("/search?fr")
@@ -40,14 +51,3 @@ tape("Home route returns a status code of 200", t => {
 //       t.end();
 //     });
 // });
-
-tape("Return an error if the route is wrong", t => {
-  supertest(router)
-    .get("/unicorn")
-    .expect(404)
-    .expect("Content-Type", /html/)
-    .end((err, res) => {
-      t.error(err);
-      t.end("");
-    });
-});

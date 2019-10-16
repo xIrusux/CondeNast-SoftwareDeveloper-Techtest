@@ -27,10 +27,6 @@ let apiCall = keyword => {
     let articleElements = document.querySelector(".articles-display");
     articleElements.innerHTML = "";
 
-    // const newsObject = JSON.parse(xhr.responseText);
-    // let topThree = newsObject.splice(0, 3);
-    // topThree.forEach(elem => addDom(elem));
-
     if (xhr.status !== 200) {
       let headline = document.createElement("h2");
       headline.textContent = "No data";
